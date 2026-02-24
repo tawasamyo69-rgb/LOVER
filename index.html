@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Tanisha 💝💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    perspective: 1500px;
+  }
+
+  .book {
+    width: 90vw;
+    max-width: 400px;
+    height: 70vh;
+    margin: auto;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: visible;
+  }
+
+  .page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    font-size: 1.5em;
+    padding: 20px;
+    color: #ff69b4;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    line-height: 1.6;
+  }
+
+  .page:nth-child(1) { background: #ffebf2; }
+  .page:nth-child(2) { background: #ffe3b3; transform: rotateY(180deg); }
+  .page:nth-child(3) { background: #d6ffeb; transform: rotateY(180deg); }
+  .page:nth-child(4) { background: #d6e0ff; transform: rotateY(180deg); }
+  .page:nth-child(5) { background: #fff0f5; transform: rotateY(180deg); }
+
+  .page.show {
+    transform: rotateY(0deg);
+    z-index: 10;
+    opacity: 1;
+  }
+
+  h1 { font-size: 2em; animation: bounce 1s infinite alternate; }
+  @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-15px); } }
+
+  /* Confetti */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.9;
+    border-radius: 50%;
+    animation: fall 3s linear forwards;
+  }
+  @keyframes fall { 0% { transform: translateY(-20px) rotate(0deg); } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+
+  /* Hearts */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 4s linear infinite;
+    border-radius: 50%;
+  }
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  .heart::before { top: -10px; left: 0; }
+  .heart::after { left: 10px; top: 0; }
+  @keyframes float { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
+
+  /* Music Controls */
+  .music-controls { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 100; }
+  .music-controls button { font-size: 1em; margin: 0 5px; padding: 5px 10px; border-radius: 10px; border: none; background: #ff69b4; color: white; }
+
+  /* Candle & Cake */
+  .cake-container { position: relative; width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+  .cake { width: 150px; height: 100px; background: pink; border-radius: 10px; position: relative; }
+  .candle { width: 10px; height: 30px; background: yellow; position: absolute; top: -30px; border-radius: 3px; }
+  .flame { width: 6px; height: 10px; background: orange; position: absolute; top: -10px; left: 2px; border-radius: 50%; animation: flicker 0.3s infinite alternate; }
+  @keyframes flicker { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0.7; transform: scale(1.2); } }
+  .cut-cake { position: absolute; top: 0; left: 0; width: 150px; height: 100px; background: pink; border-radius: 10px; clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%); display: none; animation: slice 1s forwards; }
+  @keyframes slice { 0% { transform: rotate(0deg); } 100% { transform: rotate(-30deg); } }
+
+  .timer { font-size: 2em; color: red; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="music-controls">
+  <button onclick="document.getElementById('music').play()">🎵 Play My Love</button>
+  <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
+</div>
+
+<div class="book" id="book">
+  <div class="page show">
+    <h1>🎉 Happy Birthday, my dearest Tanisha 💖</h1>
+    Today the world shines brighter because your heart is here. Every smile of yours is a poem, every laugh, a melody that fills my soul. May this day reflect even a fraction of the light you bring into my life.
+  </div>
+
+  <div class="page">
+    On this special day, I wish you oceans of joy, clouds of peace, and skies painted with your dreams. May every moment whisper love, and may every tomorrow carry hope as endless and deep as my love for you.
+  </div>
+
+  <div class="page">
+    Balloons rise, candles glow, and my heart dances with every beat of yours. You are the warmth in my winters, the calm in my storms, the reason my heart keeps writing stories of us. Happy Birthday, Motte 💖.
+  </div>
+
+  <div class="page">
+    Forever isn’t long enough to tell you how deeply you are cherished. May your life overflow with happiness, and may every step you take be guided by love, laughter, and dreams we’ll share together, always, my Tanisha.
+  </div>
+
+  <div class="page">
+    <h1>🎂 Make a Wish! 🎂</h1>
+    <div class="cake-container">
+      <div class="cake" id="cake">
+        <div class="candle" style="left: 30px;"><div class="flame"></div></div>
+        <div class="candle" style="left: 60px;"><div class="flame"></div></div>
+        <div class="candle" style="left: 90px;"><div class="flame"></div></div>
+        <div class="cut-cake" id="cutCake"></div>
+      </div>
+      <div class="timer" id="timer">5</div>
+    </div>
+    <p>Blow the candles in <span id="timerText">5</span> seconds!</p>
+  </div>
+
+</div>
+
+<audio id="music" preload="auto" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/10/audio_4b7e2b7f39.mp3?filename=beautiful-plays-my-love-129227.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let pages = document.querySelectorAll('.page');
+let current = 0;
+const book = document.getElementById('book');
+
+// Flip to next page
+function nextPage() {
+  if(current < pages.length - 1) {
+    pages[current].classList.remove('show');
+    current++;
+    pages[current].classList.add('show');
+    spawnConfetti();
+    spawnHearts();
+
+    // If it's the candle page, start timer
+    if(current === pages.length -1) startCandleTimer();
+  }
+}
+
+// Swipe detection for mobile
+let startX = 0;
+book.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+book.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if(startX - endX > 50) nextPage(); // swipe left
+});
+
+// Confetti effect
+function spawnConfetti() {
+  for(let i=0;i<30;i++){
+    let confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+    confetti.style.left = Math.random()*90 + 'vw';
+    confetti.style.animationDuration = (2+Math.random()*2) + 's';
+    document.body.appendChild(confetti);
+    setTimeout(()=>{ confetti.remove(); }, 3000);
+  }
+}
+
+// Hearts effect
+function spawnHearts() {
+  for(let i=0;i<10;i++){
+    let heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random()*90 + 'vw';
+    heart.style.animationDuration = (3+Math.random()*2) + 's';
+    document.body.appendChild(heart);
+    setTimeout(()=>{ heart.remove(); }, 4000);
+  }
+}
+
+// Start music on tap (required by some mobiles)
+document.body.addEventListener('click', () => {
+  const music = document.getElementById('music');
+  if(music.paused) music.play();
+});
+
+// Candle timer
+function startCandleTimer() {
+  let timer = 5;
+  const timerEl = document.getElementById('timerText');
+  const cutCake = document.getElementById('cutCake');
+  const countdown = setInterval(() => {
+    timer--;
+    timerEl.textContent = timer;
+    if(timer <= 0) {
+      clearInterval(countdown);
+      timerEl.textContent = "🎉";
+      // Show cake cutting
+      cutCake.style.display = 'block';
+      spawnConfetti();
+    }
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
